@@ -1,2 +1,3 @@
 ModeliranjeIPv6
 ===============
+Eclipse -> Import... -> Projects from git -> ...

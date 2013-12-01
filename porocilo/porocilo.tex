@@ -1,0 +1,159 @@
+
+\documentclass[11pt,a4paper,slovene]{myarticle}
+
+%Uporabljeni paketi
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage{caption}
+\captionsetup{font={default,footnotesize}, labelfont=bf, format=hang,indention=.0cm}
+\usepackage{graphicx,epsfig}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{url}
+\usepackage{makeidx}
+\usepackage[official]{eurosym}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+   bookmarksnumbered=true,
+   urlbordercolor={0 1 0},
+   linkbordercolor={1 1 1},
+   unicode=true,
+   pdftitle={ Modeliranje Računalniških Omrežij },
+   pdfauthor={Asistent},
+   pdfdisplaydoctitle=true,
+   pdftoolbar=true,
+   pdfmenubar=true,
+   pdfstartview=X Y Z
+}
+
+\urlstyle{same}
+
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+\setlength\unitlength{1mm}
+
+\begin{document}
+\label{naslov}
+\pdfbookmark[1]{Naslov}{naslov}
+\thispagestyle{empty}
+
+\begin{center}
+\begin{Large}
+Modeliranje računalniških omrežij\\
+Študijsko leto 2013/2014\\
+\end{Large}
+
+\vspace*{4cm}
+\begin{LARGE}
+\textbf{Modeliranje IPv6 omrežij\\}
+\end{LARGE}
+\vspace*{0.5cm}
+
+\begin{Large}
+1. delno poročilo velike seminarske naloge\\
+
+\vspace*{4cm}
+
+Nihad Kerić, 63099999\\
+Miha Novak, 63099999\\
+Gregor Bahor, 63099999\\
+Darko Janković6, 63100176\\
+
+\vspace*{5cm}
+Ljubljana, \today
+\end{Large}
+\end{center}
+
+\pagebreak
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+
+\label{Kazalo}
+\pdfbookmark[1]{Kazalo}{Kazalo}
+\tableofcontents
+\thispagestyle{empty}
+\pagebreak
+
+\section{Naloga}
+Modelirajte bolj kompleksne primere IPv6 omrežja s pomočjo INET ogrodja v orodju OMNeT++. 
+
+\section{Opišite vsaj 3 zglede za modeliranje IPv6 omrežij v INET ogrodju.}
+\subsection{Pv6NClients}
+V datoteki NclientsEth.ned oz. NclientsPPP.ned imamo skonfigurirano omrežje s tremi IPv6 usmerjevalniki ter n IPv6 odjemalcev(komuniciranje preko aplikacije TelnetApp). Ipv6 odjemalci so strežnik in n klienti, kar je prikazano na sliki spodaj. Stevilo n-klientov v našem testnem primeru se doloci v konfiguraciji :[General]*.n=10, lahko tudi spremenimo čas izvajanja simulacije v nasem primeru 'sim-time-limit=168h' v datoteki omnetpp.ini. Vsi klienti so vezani na en usmerjevalnik r1. Med klienti in strežnikom so med seboj zaporedno vezani trije usmerjevalniki, strežnik je vezan na usmerjevalnik r3. Ob zagonu simulacije se vzpostavi stanje omrežja, nato pa se prične seja med strežnikom in klienti. Seje se izmenjujemo med razlicnimi klienti. Pri testiranju različno velikem številu klientov n=2,10,100,200 in pri simulacijskem času 168h ni prišlo do napak.Simulacija NClientsPPP je identična po zgradbi omrežja NclientsEth.
+Razlika med omrežjema se pojavi v načinu povezave fiberline ali ethernetline in stem se spremeni cas potovanja paketov in propustnost kanalov.
+Simulacija NclientsEth ima definirano hitrost prenosa podatkov datarate=100Mbps in je počasnejša od NClientsPPP, katera ima hitrost prenosa podatkov datarate=1Gbps.
+
+\subsection{IPv6Bulk}
+Omrežje sestavljajo strežnik, usmerjevalnik in trije odjemalci. Strežnik in vsi trije odjemalci so povezani z usmerjevalnikom, obstaja pa tudi direktna povezava med strežnikom in enimi izmed odjemalcem. Vse povezave so tipa in/out, hitrost prenosa podatkov po kanalu pa je 10Mbps z zakasnitvijo 0.1us. Ves promet v omrežju usmerja usmerjevalnik, ki usmerja tudi promet med strežnikom in odjemalcem. Pred zagonom simulacije lahko izberamo med različnimi TCP implementacijami (TCP, TCP\_lwIP, TCP\_NSC). Po omrežju se prenašajo različni paketi. Neighbor Discovery Protocol (NDP) - RApacket (router advertisement), RSpacket (Router Solicitatio) NAPacket (Neighbour Advertisement) in NAPacket (Neighbour Solicitation) potem sledi rokovanje (ACK)... TODO.
+
+\subsection{Nclients}
+Nclient ima dve mreži :
+1) NClientsEth.ned
+2) NClientsPPP.ned
+
+\subsubsection{NClientsEth}
+Pri tistem omrežiju imamo komunikaciju med odjemalcem in strežnikom,ali pač z n odjemalcov pa enim strežnikom preko 3 usmerjevalnika. Kateri so povezani preko  ipv6 protokola, naslovi so razdelni na 8 naslovo.
+V NClientsEth.ned fielu imam dve vrsti kanalov (channel):
+- fiberline
+-ethernetline
+Kanali imata iste antribute z različnimi nastavitvi.
+            fiberline (delay= 1us in datarate= 512 Mbps)
+ethernetline (delay= 0.1us in datarate= 10 Mbps)
+Usmerjevalniki komunicirajo preko tistih kanalov ,prvo uspostave povezavo pošiljanjem različnih paketov kot so: NSpacket  , RApacket, RSpacket  , SYN, SYN+ACK. Po vzpostavljenoj povezavi se začneju pošiljati paketov. Strežnik pošlje paket proti odjemalcu kateri pol odgovori z pošiljanjem paketa ACK.  Isto se zgodi pri pošiljanu paketov z strani odjemalca.
+
+\subsubsection{NClientPPP}
+Tudi v tem omrežiju imamo komunikaciju med n odjemalcev in strežnikom preko tri usmerjevalnika, ipv6 naslov je razdelen na 8 naslovo kateri so krajši od naslovo prve konfiguracije v temu se razlikujeta.
+ V NClientsEth.ned fielu imam  kanal (channel):
+            -fiberline z nastavitvemi: (delay= 1us in datarate= 512 Mbps)
+ 
+
+\section{Podrobna analiza enega od zgledov}
+Za analizo smo izbrali zgled \textit{demonetworketh}.
+Omrežje je sestavljeno iz naslednjih gradnikov:
+- configurator tipa FlatNetworkConfigurator6
+- r1 tipa Router6
+- r2 tipa Router6
+- cli[n] tipa StandardHost6
+- srv[n] tipa StandardHost6
+- linemonitor[n] tipa TCPDump
+
+FlatNetworkConfigurator6
+Konfigurira Ipv6 naslove in posredovalne tabele.
+
+Router6
+Predstavlja Ipv6 usmerjevalnik.
+
+StandardHost6
+Ipv6 gostitelj s TCP, SCTP in UDP plastmi in aplikacijami.
+
+TCPDump
+Pregledovanje vsebine paketov.
+\begin{figure}[H]
+\includegraphics[scale=0.5]{slike/demoNetworkEth.png}
+\end{figure}
+
+\section{Zaključek}
+Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri samem opisu rešitve se običajno sklicujemo na reference, npr. \cite{omnetpp} in \cite{cisco}. 
+
+\pagebreak
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
