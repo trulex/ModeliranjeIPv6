@@ -60,8 +60,8 @@ Modeliranje računalniških omrežij\\
 
 Nihad Kerić, 63099999\\
 Miha Novak, 63100268\\
-Gregor Bahor, 63099999\\
-Darko Janković6, 63100176\\
+Gregor Bahor, 63090049\\
+Darko Janković, 63100176\\
 
 \vspace*{5cm}
 Ljubljana, \today
@@ -82,13 +82,12 @@ Ljubljana, \today
 \section{Naloga}
 Modelirajte bolj kompleksne primere IPv6 omrežja s pomočjo INET ogrodja v orodju OMNeT++. 
 
-\section{Opišite vsaj 3 zglede za modeliranje IPv6 omrežij v INET ogrodju.}
+\section{Opis 3 zgledov za modeliranje IPv6 omrežij v INET ogrodju.}
 \subsection{Pv6NClients}
 V datoteki NclientsEth.ned oz. NclientsPPP.ned imamo skonfigurirano omrežje s tremi IPv6 usmerjevalniki ter n IPv6 odjemalcev(komuniciranje preko aplikacije TelnetApp). Ipv6 odjemalci so strežnik in n klienti, kar je prikazano na sliki spodaj. Stevilo n-klientov v našem testnem primeru se doloci v konfiguraciji :[General]*.n=10, lahko tudi spremenimo čas izvajanja simulacije v nasem primeru 'sim-time-limit=168h' v datoteki omnetpp.ini. Vsi klienti so vezani na en usmerjevalnik r1. Med klienti in strežnikom so med seboj zaporedno vezani trije usmerjevalniki, strežnik je vezan na usmerjevalnik r3. Ob zagonu simulacije se vzpostavi stanje omrežja, nato pa se prične seja med strežnikom in klienti. Seje se izmenjujemo med razlicnimi klienti. Pri testiranju različno velikem številu klientov n=2,10,100,200 in pri simulacijskem času 168h ni prišlo do napak.Simulacija NClientsPPP je identična po zgradbi omrežja NclientsEth.
 Razlika med omrežjema se pojavi v načinu povezave fiberline ali ethernetline in stem se spremeni cas potovanja paketov in propustnost kanalov.
 Simulacija NclientsEth ima definirano hitrost prenosa podatkov datarate=100Mbps in je počasnejša od NClientsPPP, katera ima hitrost prenosa podatkov datarate=1Gbps.
 
-\pagebreak
 \subsection{IPv6Bulk}
 Omrežje sestavljajo strežnik, usmerjevalnik in trije odjemalci. Strežnik in vsi trije odjemalci so povezani z usmerjevalnikom, obstaja pa tudi direktna povezava med strežnikom in enimi izmed odjemalcem. Vse povezave so tipa in/out, hitrost prenosa podatkov po kanalu pa je 10Mbps z zakasnitvijo 0.1us. Ves promet v omrežju usmerja usmerjevalnik, ki usmerja tudi promet med strežnikom in odjemalcem. 
 \\
@@ -108,8 +107,6 @@ Paketi, ki se prenašajo pri NDP (Neighbor Discovery Protocol):
 \item NSpacket (Neighbour Solicitation)
 \item NApacket (Neighbour Advertisement)
 \end{itemize}
-\\
-\\
 Paketi, ki se prenašajo pri TCP seji
 \begin{itemize}
 \item SYN
@@ -139,31 +136,34 @@ Tudi v tem omrežiju imamo komunikaciju med n odjemalcev in strežnikom preko tr
 
 \section{Podrobna analiza enega od zgledov}
 Za analizo smo izbrali zgled \textit{demonetworketh}.
-Omrežje je sestavljeno iz naslednjih gradnikov:
-- configurator tipa FlatNetworkConfigurator6
-- r1 tipa Router6
-- r2 tipa Router6
-- cli[n] tipa StandardHost6
-- srv[n] tipa StandardHost6
-- linemonitor[n] tipa TCPDump
-
-FlatNetworkConfigurator6
-Konfigurira Ipv6 naslove in posredovalne tabele.
-
-Router6
-Predstavlja Ipv6 usmerjevalnik.
-
-StandardHost6
-Ipv6 gostitelj s TCP, SCTP in UDP plastmi in aplikacijami.
-
-TCPDump
-Pregledovanje vsebine paketov.
 \begin{figure}[H]
 \includegraphics[scale=0.5]{slike/demoNetworkEth.png}
 \end{figure}
+Omrežje je sestavljeno iz naslednjih gradnikov:
+\begin{itemize}
+\item configurator tipa FlatNetworkConfigurator6
+\item r1 tipa Router6
+\item r2 tipa Router6
+\item cli[n] tipa StandardHost6
+\item srv[n] tipa StandardHost6
+\item linemonitor[n] tipa TCPDump
+\end{itemize}
 
-\section{Zaključek}
-Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri samem opisu rešitve se običajno sklicujemo na reference, npr. \cite{omnetpp} in \cite{cisco}. 
+\textbf{FlatNetworkConfigurator6}\\
+Konfigurira Ipv6 naslove in posredovalne tabele.
+
+\textbf{Router6}\\
+Predstavlja Ipv6 usmerjevalnik.
+
+\textbf{StandardHost6}\\
+Ipv6 gostitelj s TCP, SCTP in UDP plastmi in aplikacijami.
+
+\textbf{TCPDump}\\
+Pregledovanje vsebine paketov.
+
+
+%\section{Zaključek}
+%Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
 
 \pagebreak
 \bibliographystyle{plain}
