@@ -7,3 +7,5 @@
 \contentsline {subsubsection}{\numberline {2.3.1}NClientsEth}{3}{subsubsection.2.3.1}
 \contentsline {subsubsection}{\numberline {2.3.2}NClientPPP}{4}{subsubsection.2.3.2}
 \contentsline {section}{\numberline {3}Podrobna analiza enega od zgledov}{4}{section.3}
+\contentsline {section}{\numberline {4}Podroben opis razpolo\IeC {\v z}ljivih gradnikov INET ogrodja}{5}{section.4}
+\contentsline {subsection}{\numberline {4.1}NetworkLayer6}{5}{subsection.4.1}

@@ -161,6 +161,33 @@ Ipv6 gostitelj s TCP, SCTP in UDP plastmi in aplikacijami.
 \textbf{TCPDump}\\
 Pregledovanje vsebine paketov.
 
+\section{Podroben opis razpoložljivih gradnikov INET ogrodja}
+Opisali smo gradnike iz primera \textit{demonetworketh}.
+
+\subsection{NetworkLayer6}
+Omrežje vsebuje elemente, ki so ključnega pomena pri klientih, usmerjevalnikih in strežnikih.
+Modul NetworkLayer6.ned predstavlja Ipv6 omrežno plast in  je sestavljen iz elementov:
+-import inet.networklayer.ipv6.IPv6ErrorHandling;
+-import inet.networklayer.ipv6.IPv6;
+-import inet.networklayer.icmpv6.IPv6NeighbourDiscovery;
+-import inet.networklayer.icmpv6.ICMPv6;
+\\
+SLIKA
+\\
+
+-Ipv6: modul setavlja klasifikacijski obrejkt (modul) IPv6Datagram, ki predstavlja glavo
+paketa IPv6 protokola. Ko modul ipv6 pošlje paket višjemu nivoju (TCP ali UDP
+protokol) po ISO/OSI omrežnem modelu ga opremi z izvornim in ponornim naslovom.
+Opisani elementi povezujejo 3. omrežni (IPv6) in 4. transportni (TCP/UDP) nivo po
+OSI/ISO omrežnem modelu.
+\\
+-IPv6ErrorHandling:Napake pridejo v obliki sporočila, modul se uporablja za beleženje napak na omrežnem nivoju.
+\\
+-NeighburDiscovery: modul se uporablja za izvajanje vseh naloge, povezanih z odkritje
+sosedov in brez naslovno auto konfiguracijo. Neighbour discovery paketi so sami poslani in obdelani stem modulom. Ko Ipv6 prejme enega, posreduje paket naprej k IPv6 Neighbor Discovery.
+\\
+-Icmpv6: modul, ki služi za pošiljanje zahtev »echo request« na omrežnem
+nivoju. Zahteva bo poslana na vrat pingIn z proloženo IPv6ControlInfo. Odgovor »echo reply« bo sprejet, ko sporočilo bo poslano skozi vrata pingOut.
 
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
