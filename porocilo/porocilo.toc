@@ -9,3 +9,4 @@
 \contentsline {section}{\numberline {3}Podrobna analiza enega od zgledov}{4}{section.3}
 \contentsline {section}{\numberline {4}Podroben opis razpolo\IeC {\v z}ljivih gradnikov INET ogrodja}{5}{section.4}
 \contentsline {subsection}{\numberline {4.1}NetworkLayer6}{5}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}RoutingTable6}{6}{subsection.4.2}

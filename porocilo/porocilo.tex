@@ -189,6 +189,17 @@ sosedov in brez naslovno auto konfiguracijo. Neighbour discovery paketi so sami 
 -Icmpv6: modul, ki služi za pošiljanje zahtev »echo request« na omrežnem
 nivoju. Zahteva bo poslana na vrat pingIn z proloženo IPv6ControlInfo. Odgovor »echo reply« bo sprejet, ko sporočilo bo poslano skozi vrata pingOut.
 
+
+\subsection{RoutingTable6}
+Ta gradnik predstavlja IPv6 usmerjevalno tabelo. Vsak gostitelj ali usmerjevalnik v omrežju ima natanko en primerek tega gradnika. Je preprosti (simple) modul brez vrat in se aktivira s klicem funkcije. Ima funkcije za branje in posodabljanje tabele, ter za usmerjanje \textit{unicast} in \textit{multicast} prometa. Usmerjevalna tabela se inicializira na vrednosti, ki jih prebere iz datoteke. Med simulacijo se seveda iz nje bere ter se jo spreminja, skladno z uporabljenimi usmerjevalnimi protokoli.\\
+Modul \textit{RoutingTable6.ned} ima 3 parametre:
+\begin{itemize}
+\item xml routingTable = default(xml("<routingTable/>")); // datoteka z začetno usmerjevalno tabelo v obliki XML
+\item bool isRouter; // če je nastavljena na \textit{true}, je omogočeno posredovanje IP
+\item bool forwardMulticast = default(false); // posredovanje multicast prometa
+\end{itemize}
+
+
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
 
