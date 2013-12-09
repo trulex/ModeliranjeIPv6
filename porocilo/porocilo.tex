@@ -58,7 +58,7 @@ Modeliranje računalniških omrežij\\
 
 \vspace*{4cm}
 
-Nihad Kerić, 63099999\\
+Nihad Kerić, 63090347\\
 Miha Novak, 63100268\\
 Gregor Bahor, 63090049\\
 Darko Janković, 63100176\\
@@ -199,6 +199,8 @@ Modul \textit{RoutingTable6.ned} ima 3 parametre:
 \item bool forwardMulticast = default(false); // posredovanje multicast prometa
 \end{itemize}
 
+\subsection{InterfaceTable}
+Gradnik predstavlja tabelo omrežnih vmesnikov. Omrežne vmesnike kot so PPPInterface in drugi, dinamično registrirajo ustrezni moduli. Tabela vsebuje lastnosti vmesnikov, ki se ne navezujejo na lastnosti protokolov. Specifične lastnosti protokolov, IPv4 in IPv6 se hranijo v gradniku RoutingTable oziroma v zgoraj opisanemu gradniku RoutingTable6. Modul InterfaceTable nima vrat in se aktivira s klici funkcij, ki se nahajajo v pripadajočem C++ razredu. Modul je opisan samo z enim parametrom displayAddresses, ki je tipa boolean in pove ali naj prikaže IP naslove na povezavah ali ne.
 
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
