@@ -202,6 +202,18 @@ Modul \textit{RoutingTable6.ned} ima 3 parametre:
 \subsection{InterfaceTable}
 Gradnik predstavlja tabelo omrežnih vmesnikov. Omrežne vmesnike kot so PPPInterface in drugi, dinamično registrirajo ustrezni moduli. Tabela vsebuje lastnosti vmesnikov, ki se ne navezujejo na lastnosti protokolov. Specifične lastnosti protokolov, IPv4 in IPv6 se hranijo v gradniku RoutingTable oziroma v zgoraj opisanemu gradniku RoutingTable6. Modul InterfaceTable nima vrat in se aktivira s klici funkcij, ki se nahajajo v pripadajočem C++ razredu. Modul je opisan samo z enim parametrom displayAddresses, ki je tipa boolean in pove ali naj prikaže IP naslove na povezavah ali ne.
 
+\subsection{Notification Board}
+Z uporab Notification Boarda, lahko moduli sedaj med seboj obvestita o dogodki, kot je sprememba usmerjevalnih tabel, statusa vmesnika, konfiguracije vmesnik, brezžične predajanja itd.
+Notification Board ima natanko en primerek v klientu ali strežniku model in deluje kot posrednik med modulom.
+Lahko se pojavijo in moduli, ki so zainteresirani za učenje o tistih spremembe. Sej morajo biti imenovan kot "notificationBoard", da deluje pravilno.
+Moduli lahko "naročite" na kategorij sprememb (npr. "usmerjevalne table spremeniti ali radijska postaja postala prazna"). Ko pride do take spremembe, ki ustrezajo
+modul (npr. ~ RoutingTable ali modul fizični sloj) bo pustil  NotificationBoard.Obveščanja dogodki so združene v "kategoriji".
+Vsaka kategorija je določena s celim številom (zdaj je to pripisano v izvorno kodo preko ENUM ).
+Stranke, ki želijo prejemati obvestila je treba izvajati (podrazred od) v INotifiable vmesnik, dobimo kazalec na NotificationBoard, in se naročite na kategorije jih zanima 
+s klicom subscribe() metodo v NotificationBoard. Obvestila bodo dostavljeni na receiveChangeNotification() metodo stranke (re definirani od INotifiable).
+
+
+
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
 
@@ -210,6 +222,9 @@ Gradnik predstavlja tabelo omrežnih vmesnikov. Omrežne vmesnike kot so PPPInte
 \bibliography{references}
 
 \end{document}
+
+
+
 
 
 
