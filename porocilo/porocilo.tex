@@ -281,7 +281,28 @@ Usmerjevalne tabele = routingTable6 modul se uporablja za hranjene podatkovnih s
 \caption{Primer omrežja ring}
 \end{figure}
 
-
+\subsection{Topologija vodila (bus topology)}
+Topologija vodila je najpreprostejša omrežna arhitektura za katero je značilno, da so vse naprave priključene na enoten skupen medij po katerem poteka prenos podatkov. Ponavadi je to ethernet. Topologija omrežja je večkrat prikazana linearno saj so naprave pogosto povezane v ravni liniji. V celotnem omrežju lahko samo ena postaja naenkrat oddaja pakete, dobijo pa jih vse postaje priključene na vodilo. Ta topologija omrežja se danes vedno manj uporablja.
+\\
+\\
+Prednosti:
+\begin{itemize}
+\item Preprosta postavitev in razširitev omrežja
+\item Zahteva najmanj omrežnega kabla
+\item Poceni realizacija
+\end{itemize}
+\pagebreak
+Slabosti:
+\begin{itemize}
+\item Okvara vodila posledično pomeni izpad celotnega omrežja
+\item Število možnih odjemalcev je omejeno z dolžino kabla
+\item Težko je odkriti vzrok težav, ker si vse naprave delijo isti medij in posledično dobijo vse pakete
+\item Na vodilo nastajajo trki (kolizija)
+\end{itemize}
+\begin{figure}[H]
+\includegraphics[scale=0.75]{slike/bus.png}
+\caption{Primer omrežja, ki temelji na topologiji vodila}
+\end{figure}
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
 

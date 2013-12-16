@@ -16,4 +16,5 @@
 \contentsline {subsection}{\numberline {5.1}Drevesna topologija (tree topology)}{7}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2}Zvezna topologija (star topology)}{8}{subsection.5.2}
 \contentsline {subsection}{\numberline {5.3}Obro\IeC {\v c}na topologija (star topology)}{9}{subsection.5.3}
-\contentsline {section}{\numberline {6}Literatura}{12}{section.6}
+\contentsline {subsection}{\numberline {5.4}Topologija vodila (bus topology)}{11}{subsection.5.4}
+\contentsline {section}{\numberline {6}Literatura}{13}{section.6}
