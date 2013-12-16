@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.15)  16 DEC 2013 23:14
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.15)  16 DEC 2013 23:20
 entering extended mode
 **porocilo.tex
 (C:\Users\Miha\Desktop\ModeliranjeIPv6\trunk\porocilo\porocilo.tex
@@ -651,9 +651,38 @@ LaTeX Info: Redefining \nameref on input line 38.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Users\Miha\Desktop\ModeliranjeIPv6\trunk\porocilo\porocilo.toc
+Overfull \hbox (0.72444pt too wide) in paragraph at lines 3--3
+ [] [][]\T1/lmr/bx/n/10.95 Opis 3 zgle-dov za mo-de-li-ra-nje IPv6 omre-ºij v I
+NET ogrodju.[] []  
+ []
 
-Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\ot1lmr.fd"
+File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omllmm.fd"
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omxlmex.fd"
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 4.
+)
 \tf@toc=\write4
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -670,12 +699,6 @@ LaTeX Font Info:    Try loading font information for OMS+lmr on input line 96.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmr.fd"
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 96.
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\lm\omslmsy.fd"
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 96.
  [2]
@@ -684,7 +707,7 @@ Overfull \hbox (17.92273pt too wide) in paragraph at lines 97--98
 -pr-to-ko-dni TCP/IP
  []
 
-[3] <slike/demoNetworkEth.png, id=109, 726.715pt x 314.17375pt>
+[3] <slike/demoNetworkEth.png, id=128, 726.715pt x 314.17375pt>
 File: slike/demoNetworkEth.png Graphic file (type png)
 
 <use slike/demoNetworkEth.png>
@@ -713,7 +736,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 167--176
 
  []
 
-[5] [6] <slike/ipv6tree.png, id=125, 1171.37625pt x 677.53125pt>
+[5] [6] <slike/ipv6tree.png, id=144, 1171.37625pt x 677.53125pt>
 File: slike/ipv6tree.png Graphic file (type png)
 
 <use slike/ipv6tree.png>
@@ -724,7 +747,7 @@ Overfull \hbox (108.5422pt too wide) in paragraph at lines 230--231
 [][] 
  []
 
-[7] <slike/starNetwork.png, id=131, 600.74437pt x 409.53pt>
+[7] <slike/starNetwork.png, id=150, 600.74437pt x 409.53pt>
 File: slike/starNetwork.png Graphic file (type png)
 
 <use slike/starNetwork.png>
@@ -733,7 +756,7 @@ Package pdftex.def Info: slike/starNetwork.png used on input line 238.
  [8 <C:/Users/Miha/Desktop/ModeliranjeIPv6/trunk/porocilo/slike/ipv6tree.png>] 
 [9 <C:/Users/Miha/Desktop/ModeliranjeIPv6/trunk/porocilo/slike/starNetwork.png>
 ]
-<slike/obrocnoOmrezije.png, id=145, 743.77875pt x 534.99875pt>
+<slike/obrocnoOmrezije.png, id=164, 743.77875pt x 534.99875pt>
 File: slike/obrocnoOmrezije.png Graphic file (type png)
 
 <use slike/obrocnoOmrezije.png>
@@ -750,7 +773,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 285--289
  []
 
 [11 <C:/Users/Miha/Desktop/ModeliranjeIPv6/trunk/porocilo/slike/obrocnoOmrezije
-.png>] <slike/bus.png, id=155, 502.12593pt x 343.2825pt>
+.png>] <slike/bus.png, id=174, 502.12593pt x 343.2825pt>
 File: slike/bus.png Graphic file (type png)
  <use slike/bus.png>
 Package pdftex.def Info: slike/bus.png used on input line 303.
@@ -774,18 +797,14 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 313.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 313.
 Package rerunfilecheck Info: File `porocilo.out' has not changed.
 (rerunfilecheck)             Checksum: 4D0B3AE9512AFC0B4F350180A4B2F72C;3861.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 313.
  ) 
 Here is how much of TeX's memory you used:
- 10908 strings out of 493921
- 154984 string characters out of 3144878
- 218075 words of memory out of 3000000
- 14051 multiletter control sequences out of 15000+200000
- 39260 words of font info for 28 fonts, out of 3000000 for 9000
+ 10969 strings out of 493921
+ 156495 string characters out of 3144878
+ 220000 words of memory out of 3000000
+ 14092 multiletter control sequences out of 15000+200000
+ 49978 words of font info for 37 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  36i,8n,43p,1160b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.enc}{C:/Program F
@@ -797,9 +816,9 @@ mr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr12.pfb><C:
 /Program Files (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmr9.pfb><C:/Program File
 s (x86)/MiKTeX 2.9/fonts/type1/public/lm/lmri10.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/public/lm/lmsy10.pfb>
-Output written on porocilo.pdf (14 pages, 1331595 bytes).
+Output written on porocilo.pdf (14 pages, 1337846 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
+ 225 PDF objects out of 1000 (max. 8388607)
  41 named destinations out of 1000 (max. 500000)
  194 words of extra memory for PDF output out of 10000 (max. 10000000)
 
