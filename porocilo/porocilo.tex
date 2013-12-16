@@ -227,10 +227,60 @@ Slabosti, ki se lahko pojavijo pri takšni topologiji:
 \item Relativno težja konfiguracija v primerjavi z ostalimi topologijami
 \end{itemize}
 \begin{figure}[H]
-\includegraphics[scale=0.5]{slike/ipv6tree.png}
-%error dobim pri kompajlanju ko includam sliko, lahko kdo pogleda kaj je narobe? Darko
-\caption{Primer omrežja}
+\includegraphics[scale=0.4]{slike/ipv6tree.png}
+\caption{Primer omrežja tree}
 \end{figure}
+
+\subsection{Zvezna topologija (star topology)}
+
+Omrežje star je sestavljeno iz 50 klientov in usmerjevalniku, kateri je v vozlišču omrežija . Vsi klienti so povezani z »fiberline« povezavo in komunicirajo preko tega usmerjevalnika. Fiberline povezava omogoča hitrost prenosa 1Gbps  v 1 us. Na začetku usmerjevalnik prvo vzpostavi povezavo z vsakim klientom pošiljanjem paketa NS in pol vsak klient naredi isto pošlje NS paket usmerjevalniku. Zdaj imamo vzpostavljenu povezavo z usmerjevalnikom. Da bi klient »1« komuniciral  z klientom »2«  prvo pošlje signal SYN  na to usmerjevalnik preveri povezavo do klienta »2« kateri mu odgovori pošiljanjem paketa NS. Usmerjevalnik pošlje SYN-ACK klientu kateri je zahteval povezavo v našem primeru je to klient »1« ,zdaj imamo povezana klienta »1« in »2«. Zvezda poizkuša povečati stabilnost omrežja z uvedbo centralnega vozla v katerega so povezani vsi odjemalci. V primeru, da izpade zveza med poljubnim odjemalcem in centralnim vozlom, ostanejo ostale zveze nespremenjene. Vsi odjemalci torej komunicirajo direktno le z glavnim vozlom - odgovoren je za prenos podatkov do ostalih uporabnikov omrežja. 
+\begin{figure}[H]
+\includegraphics[scale=0.5]{slike/starNetwork.png}
+\caption{Primer omrežja star}
+\end{figure}
+
+Prednosti:
+\begin{itemize}
+\item Preprosta namestitev in razširitiev
+\item Hiter, direkten prenos podatkov
+\end{itemize}
+Slabosti:
+\begin{itemize}
+\item Izpad centralnega vozla privede do izpada celotnega omrežja
+\item Odjemalci potrebujejo dodatno strojno opremo
+\end{itemize}
+
+\subsection{Obročna topologija (star topology)}
+
+Omrežje NClientsPPP (Slika spodaj) je sestavljeno iz pet usmerjevalnikov (r1,r2,r3,r5,r6,r7; so
+moduli tipa router6), ki so skupaj povezani v obliki topologije OBROČ.Na vsakem usmerjevalniku 
+imamo določeno število računalnikov(clientov) StandardHost6, na koncu imamo eden strežnik.
+
+V omrežje NClientsPPP so moduli povezani med seboj z povezavo fiberline, katera omogoča hitrost prenosa podatkov datarate=512Mbps.
+Ko zaženemo simulacijo najprej se inicializirajo vsi moduli nato usmerjevalniki razpošlejo NS pakete vsem povezanim usmerjevalnikom in nato še vsak usmerjevalnik pošlje NS paket svojim klientom, kateri so povezani na njega.
+
+Nato se vzpostavi three-way handshake med enim računalnikom in strežnikom. 
+Ko želi klent cli1 na eni strani našega omrežja vzpostaviti povezavo s strežnikom srv na drugi strani, najprej pošlje sporočilo SYN. Sporočilo (SYN) potuje do prevega usmerjevalnika R2.
+Nato usmerjevalnik R2 preveri povezljivost do usmerjevalnika R6 s sporočilom NS. Ko mu ta odgovori s sporočilom NA lahko usmerjevalnik R2 z NextHop se sklicuje na naslednji najbližji usmerjevalnik in posreduje prejeto sporočilo SYN od klienta cil1 dalje.
+Enak postopek izmenjave sporočil NS in NA se zgodi pri prenosu sporočila SYN od usmerje-
+valnika R6 in R7 do strežnika srv. Tako strežnik srv končno prejme sporočilo SYN in lahko nanj
+odgovori s sporočilom SYN-ACK. Sporočilo SYN-ACK potuje nazaj po prej zgrajeni sejni poti
+(izmenjava sporočil NS in NA) preko usmerjevalnika R7 in R6 do usmerjevalnika R2. Usmerjevalnik
+R2 mora izgraditi še zadnji del celotne poti do klienta cli1. To naredi tako, da zopet pošlje
+sporočilo NS klientu cli1 in prejme kot odgovor sporočilo NA. Končno lahko usmerjevalnik
+R2 posreduje sporočilo SYN-ACK klientu cli1. Ker komunikacija med klientom in strežnikom
+poteka po protokolu TCP mora klient odgovoriti na prejeto sporočilo SYN-ACK od strežnika
+srv s sporočilom ACK, ki potuje po  vspostavljeni povezavi preko usmerjevanlikov R2, R6 in
+R7 do ponora srv.
+
+Oba komunicirata omejen čas, nato pa rušita povezavo. Konguracija je nastavljena tako, da postopek traja sim-time-limit=168h.
+Usmerjevalne tabele = routingTable6 modul se uporablja za hranjene podatkovnih struktur, kot so lista destinacij, lista sosedov in lista predpon.
+
+\begin{figure}[H]
+\includegraphics[scale=0.5]{slike/obrocnoOmrezije.png}
+\caption{Primer omrežja ring}
+\end{figure}
+
 
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
