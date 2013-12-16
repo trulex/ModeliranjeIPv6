@@ -12,4 +12,6 @@
 \contentsline {subsection}{\numberline {4.2}RoutingTable6}{6}{subsection.4.2}
 \contentsline {subsection}{\numberline {4.3}InterfaceTable}{6}{subsection.4.3}
 \contentsline {subsection}{\numberline {4.4}Notification Board}{6}{subsection.4.4}
-\contentsline {section}{\numberline {5}Literatura}{8}{section.5}
+\contentsline {section}{\numberline {5}Postavitev 4 modelov omre\IeC {\v z}ij}{7}{section.5}
+\contentsline {subsection}{\numberline {5.1}Drevesna topologija (tree topology)}{7}{subsection.5.1}
+\contentsline {section}{\numberline {6}Literatura}{8}{section.6}

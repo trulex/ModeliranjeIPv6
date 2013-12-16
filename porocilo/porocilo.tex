@@ -35,7 +35,6 @@
 \setlength{\parskip}{12pt}
 \setlength\parindent{0pt}
 \setlength\unitlength{1mm}
-
 \begin{document}
 \label{naslov}
 \pdfbookmark[1]{Naslov}{naslov}
@@ -54,7 +53,7 @@ Modeliranje računalniških omrežij\\
 \vspace*{0.5cm}
 
 \begin{Large}
-1. delno poročilo velike seminarske naloge\\
+Poročilo seminarske naloge\\
 
 \vspace*{4cm}
 
@@ -212,7 +211,26 @@ Vsaka kategorija je določena s celim številom (zdaj je to pripisano v izvorno 
 Stranke, ki želijo prejemati obvestila je treba izvajati (podrazred od) v INotifiable vmesnik, dobimo kazalec na NotificationBoard, in se naročite na kategorije jih zanima 
 s klicom subscribe() metodo v NotificationBoard. Obvestila bodo dostavljeni na receiveChangeNotification() metodo stranke (re definirani od INotifiable).
 
-
+\section{Postavitev 4 modelov omrežij}
+\subsection{Drevesna topologija (tree topology)}
+Pri drevesni topologiji gre za kombinacijo \textit{star} in \textit{bus} topologij, kar izboljša skalabilnost omrežja. Ime je dobila po podobnosti z binarnim drevesom, ker imamo eno korensko vozlišče, ki ima lahko več otrok, pri čemer so tudi otroci lahko koreni svojega podomrežja. Primer takšnega omrežja je DNS sistem.\\
+Prednosti:
+\begin{itemize}
+\item Skalabilnost - lahko dodajanje naprav na vozlišča
+\item Možne povezave točka-točka (point to point)
+\item Zaradi večjih nivojev lažje vzdrževanje omrežja 
+\end{itemize}
+Slabosti, ki se lahko pojavijo pri takšni topologiji:
+\begin{itemize}
+\item Vzdrževanje lahko postane težje če se omrežje razprostira ne večji fizični površini
+\item Če hrbtenica omrežja odpove, bo tudi celotno omrežje nedelujoče
+\item Relativno težja konfiguracija v primerjavi z ostalimi topologijami
+\end{itemize}
+\begin{figure}[H]
+\includegraphics[scale=0.5]{slike/ipv6tree.png}
+%error dobim pri kompajlanju ko includam sliko, lahko kdo pogleda kaj je narobe? Darko
+\caption{Primer omrežja}
+\end{figure}
 
 %\section{Zaključek}
 %Ali ste izpolnili cilje in možne nadaljne nadgradnje. Pri %samem opisu rešitve se običajno sklicujemo na reference, npr. %\cite{omnetpp} in \cite{cisco}. 
