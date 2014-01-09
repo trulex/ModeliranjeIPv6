@@ -193,8 +193,6 @@ network Tree
     connections:
         router1.ethg++ <--> fiberline <--> router.ethg++;
         router1.ethg++ <--> ethernetline <--> standardHost4.ethg++;
-        router1.ethg++ <--> ethernetline <--> standardHost3.ethg++;
-        router1.ethg++ <--> ethernetline <--> standardHost2.ethg++;
         router1.ethg++ <--> ethernetline <--> standardHost1.ethg++;
         router2.ethg++ <--> ethernetline <--> standardHost29.ethg++;
         router2.ethg++ <--> ethernetline <--> standardHost27.ethg++;
@@ -245,5 +243,7 @@ network Tree
         router9.ethg++ <--> ethernetline <--> standardHost40.ethg++;
         router9.ethg++ <--> ethernetline <--> standardHost39.ethg++;
         router9.ethg++ <--> ethernetline <--> standardHost41.ethg++;
+        router.ethg++ <--> ethernetline <--> standardHost2.ethg++;
+        router.ethg++ <--> ethernetline <--> standardHost3.ethg++;
 }
 
