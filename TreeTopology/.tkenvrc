@@ -1,2 +1,3 @@
 # Partial Tkenv config file -- see $HOME/.tkenvrc as well
+inspector "Tree" "Tree" "2" "607x335+991+0:normal"
 

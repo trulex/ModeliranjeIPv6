@@ -1,1 +1,1 @@
--g -Wall -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT  -DHAVE_PCAP -DXMLPARSER=libxml -DWITH_PARSIM -DWITH_NETBUILDER -DINET_IMPORT -I. -Iresults -I/home/darko/omnetpp-4.3.1/include
+-g -Wall -fPIC  -fno-stack-protector -DHAVE_SWAPCONTEXT  -DHAVE_PCAP -DXMLPARSER=libxml -DWITH_PARSIM -DWITH_NETBUILDER -DINET_IMPORT -I. -Igrafi -Iresults -I/home/darko/omnetpp-4.3.1/include
