@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scave:Analysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:scave="http://www.omnetpp.org/omnetpp/scave">
+  <inputs>
+    <inputs name="/BusTopology/results/config2-*.vec"/>
+    <inputs name="/BusTopology/results/config2-*.sca"/>
+  </inputs>
+  <datasets>
+    <datasets name="Potovalni čas">
+      <items xsi:type="scave:Add" filterPattern="endToEndDelay:histogram:mean"/>
+      <items xsi:type="scave:BarChart" name="Potovalni čas">
+        <properties name="Graph.Title" value="Potovalni čas"/>
+      </items>
+    </datasets>
+    <datasets name="Število izgubljenih paketov">
+      <items xsi:type="scave:Add" filterPattern="dropPk:count"/>
+      <items xsi:type="scave:BarChart" name="Število izgubljenih paketov">
+        <properties name="Graph.Title" value="Število izgubljenih paketov"/>
+      </items>
+    </datasets>
+    <datasets name="Povprečen čas v vrsti">
+      <items xsi:type="scave:Add" filterPattern="queueLength:timeavg"/>
+      <items xsi:type="scave:BarChart" name="Povprečen čas v vrsti">
+        <properties name="Graph.Title" value="Povprečen čas v vrsti"/>
+      </items>
+    </datasets>
+    <datasets name="Number of sessions">
+      <items xsi:type="scave:Add" filterPattern="numSessions:last"/>
+      <items xsi:type="scave:BarChart" name="Število sej">
+        <properties name="Graph.Title" value="Število sej"/>
+      </items>
+    </datasets>
+    <datasets name="RTT">
+      <items xsi:type="scave:Add" filterPattern="&quot;measured RTT&quot;" type="VECTOR"/>
+      <items xsi:type="scave:LineChart" name="RTT" lineNameFormat="">
+        <properties name="Graph.Title" value="RTT"/>
+      </items>
+    </datasets>
+  </datasets>
+  <chartSheets>
+    <chartSheets name="default" charts="//@datasets/@datasets.0/@items.1 //@datasets/@datasets.1/@items.1 //@datasets/@datasets.2/@items.1 //@datasets/@datasets.3/@items.1 //@datasets/@datasets.4/@items.1"/>
+  </chartSheets>
+</scave:Analysis>
