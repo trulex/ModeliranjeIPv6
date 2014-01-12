@@ -9,6 +9,7 @@
       <items xsi:type="scave:Add" filterPattern="endToEndDelay:histogram:mean"/>
       <items xsi:type="scave:BarChart" name="Potovalni čas">
         <properties name="Graph.Title" value="Potovalni čas"/>
+        <properties name="Axes.Grid" value="All"/>
       </items>
     </datasets>
     <datasets name="Število izgubljenih paketov">
@@ -21,6 +22,7 @@
       <items xsi:type="scave:Add" filterPattern="queueLength:timeavg"/>
       <items xsi:type="scave:BarChart" name="Povprečen čas v vrsti">
         <properties name="Graph.Title" value="Povprečen čas v vrsti"/>
+        <properties name="Axes.Grid" value="All"/>
       </items>
     </datasets>
     <datasets name="Number of sessions">
