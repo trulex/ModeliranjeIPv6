@@ -22,5 +22,9 @@
 \contentsline {subsubsection}{\numberline {6.1.1}Podpovpre\IeC {\v c}na obremenitev}{14}{subsubsection.6.1.1}
 \contentsline {subsubsection}{\numberline {6.1.2}Srednja obremenitev}{14}{subsubsection.6.1.2}
 \contentsline {subsubsection}{\numberline {6.1.3}Nadpovpre\IeC {\v c}na obremenitev}{15}{subsubsection.6.1.3}
-\contentsline {section}{\numberline {7}Zaklju\IeC {\v c}ek}{15}{section.7}
-\contentsline {section}{\numberline {8}Literatura}{16}{section.8}
+\contentsline {subsection}{\numberline {6.2}Topologija vodila}{16}{subsection.6.2}
+\contentsline {subsubsection}{\numberline {6.2.1}Podpovpre\IeC {\v c}na obremenitev}{16}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2}Srednja obremenitev}{18}{subsubsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.3}Nadpovpre\IeC {\v c}na obremenitev}{20}{subsubsection.6.2.3}
+\contentsline {section}{\numberline {7}Zaklju\IeC {\v c}ek}{21}{section.7}
+\contentsline {section}{\numberline {8}Literatura}{22}{section.8}
